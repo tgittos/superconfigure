@@ -19,3 +19,8 @@ export OBJCOPY=$PREFIX-objcopy
 export AR=$PREFIX-ar
 export STRIP=$PREFIX-strip
 export ZIPCOPY=$COSMO/o/tool/build/zipcopy
+
+# libcurses
+# libcurses makes it's own bins to generate tinfo data
+# ensure those bins are cosmos compatible
+export BUILD_CC=$COSMO/cosmocc/bin/cosmocc

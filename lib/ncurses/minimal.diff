@@ -10,3 +10,34 @@
  #include <sys/types.h>
  #include <sys/stat.h>
  
+--- ncurses-6.4/configure	2022-10-23 13:29:26.000000000 +0000
++++ -	2024-10-25 12:00:00.000000000 +0000
+@@ -1953,28 +1953,6 @@ echo "${ECHO_T}$ac_file" >&6
+ # the compiler is broken, or we cross compile.
+ echo "$as_me:1954: checking whether the C compiler works" >&5
+ echo $ECHO_N "checking whether the C compiler works... $ECHO_C" >&6
+-# FIXME: These cross compiler hacks should be removed for Autoconf 3.0
+-# If not cross compiling, check that we can run a simple program.
+-if test "$cross_compiling" != yes; then
+-  if { ac_try='./$ac_file'
+-  { (eval echo "$as_me:1960: \"$ac_try\"") >&5
+-  (eval $ac_try) 2>&5
+-  ac_status=$?
+-  echo "$as_me:1963: \$? = $ac_status" >&5
+-  (exit "$ac_status"); }; }; then
+-    cross_compiling=no
+-  else
+-    if test "$cross_compiling" = maybe; then
+-	cross_compiling=yes
+-    else
+-	{ { echo "$as_me:1970: error: cannot run C compiled programs.
+-If you meant to cross compile, use \`--host'." >&5
+-echo "$as_me: error: cannot run C compiled programs.
+-If you meant to cross compile, use \`--host'." >&2;}
+-   { (exit 1); exit 1; }; }
+-    fi
+-  fi
+-fi
+ echo "$as_me:1978: result: yes" >&5
+ echo "${ECHO_T}yes" >&6
+ 
