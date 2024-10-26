@@ -1,0 +1,52 @@
+diff -u --unified expat-2.5.0/configure expat-2.5.0a/configure
+--- expat-2.5.0/configure	2024-10-26 16:43:19.893817823 +0000
++++ expat-2.5.0a/configure	2024-10-26 16:42:26.205135399 +0000
+@@ -4625,6 +4625,48 @@
+ }
+ _ACEOF
+ ac_clean_files="$ac_clean_files conftest.out"
++# Check that the compiler produces executables we can run.  If not, either
++# the compiler is broken, or we cross compile.
++{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether we are cross compiling" >&5
++printf %s "checking whether we are cross compiling... " >&6; }
++if test "$cross_compiling" != yes; then
++  { { ac_try="$ac_link"
++case "(($ac_try" in
++  *\"* | *\`* | *\\*) ac_try_echo=\$ac_try;;
++  *) ac_try_echo=$ac_try;;
++esac
++eval ac_try_echo="\"\$as_me:${as_lineno-$LINENO}: $ac_try_echo\""
++printf "%s\n" "$ac_try_echo"; } >&5
++  (eval "$ac_link") 2>&5
++  ac_status=$?
++  printf "%s\n" "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
++  test $ac_status = 0; }
++  if { ac_try='./conftest$ac_cv_exeext'
++  { { case "(($ac_try" in
++  *\"* | *\`* | *\\*) ac_try_echo=\$ac_try;;
++  *) ac_try_echo=$ac_try;;
++esac
++eval ac_try_echo="\"\$as_me:${as_lineno-$LINENO}: $ac_try_echo\""
++printf "%s\n" "$ac_try_echo"; } >&5
++  (eval "$ac_try") 2>&5
++  ac_status=$?
++  printf "%s\n" "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
++  test $ac_status = 0; }; }; then
++    cross_compiling=no
++  else
++    if test "$cross_compiling" = maybe; then
++	cross_compiling=yes
++    else
++	{ { printf "%s\n" "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
++printf "%s\n" "$as_me: error: in \`$ac_pwd':" >&2;}
++as_fn_error 77 "cannot run C compiled programs.
++If you meant to cross compile, use \`--host'.
++See \`config.log' for more details" "$LINENO" 5; }
++    fi
++  fi
++fi
++{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $cross_compiling" >&5
++printf "%s\n" "$cross_compiling" >&6; }
+ 
+ rm -f conftest.$ac_ext conftest$ac_cv_exeext conftest.out
+ ac_clean_files=$ac_clean_files_save

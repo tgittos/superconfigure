@@ -35,3 +35,71 @@ diff -r --unified libuuid-1.0.3a/gen_uuid.c libuuid-1.0.3/gen_uuid.c
  	}
  
  	*clock_high = clock_reg >> 32;
+
+diff -u --unified libuuid-1.0.3a/configure libuuid-1.0.3/configure
+--- libuuid-1.0.3a/configure	2024-10-26 20:55:57.955693210 +0000
++++ libuuid-1.0.3/configure	2024-10-26 21:34:38.043655068 +0000
+@@ -3043,6 +3043,7 @@
+   ac_build_alias=`$SHELL "$ac_aux_dir/config.guess"`
+ test "x$ac_build_alias" = x &&
+   as_fn_error $? "cannot guess build type; you must specify one" "$LINENO" 5
++ac_build_alias="$ARCH-linux-gnu"
+ ac_cv_build=`$SHELL "$ac_aux_dir/config.sub" $ac_build_alias` ||
+   as_fn_error $? "$SHELL $ac_aux_dir/config.sub $ac_build_alias failed" "$LINENO" 5
+ 
+@@ -3075,6 +3076,7 @@
+   if test "x$host_alias" = x; then
+   ac_cv_host=$ac_cv_build
+ else
++  host_alias="$ARCH-linux-gnu"
+   ac_cv_host=`$SHELL "$ac_aux_dir/config.sub" $host_alias` ||
+     as_fn_error $? "$SHELL $ac_aux_dir/config.sub $host_alias failed" "$LINENO" 5
+ fi
+@@ -3714,46 +3716,8 @@
+ }
+ _ACEOF
+ ac_clean_files="$ac_clean_files conftest.out"
+-# Check that the compiler produces executables we can run.  If not, either
+-# the compiler is broken, or we cross compile.
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking whether we are cross compiling" >&5
+-$as_echo_n "checking whether we are cross compiling... " >&6; }
+-if test "$cross_compiling" != yes; then
+-  { { ac_try="$ac_link"
+-case "(($ac_try" in
+-  *\"* | *\`* | *\\*) ac_try_echo=\$ac_try;;
+-  *) ac_try_echo=$ac_try;;
+-esac
+-eval ac_try_echo="\"\$as_me:${as_lineno-$LINENO}: $ac_try_echo\""
+-$as_echo "$ac_try_echo"; } >&5
+-  (eval "$ac_link") 2>&5
+-  ac_status=$?
+-  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+-  test $ac_status = 0; }
+-  if { ac_try='./conftest$ac_cv_exeext'
+-  { { case "(($ac_try" in
+-  *\"* | *\`* | *\\*) ac_try_echo=\$ac_try;;
+-  *) ac_try_echo=$ac_try;;
+-esac
+-eval ac_try_echo="\"\$as_me:${as_lineno-$LINENO}: $ac_try_echo\""
+-$as_echo "$ac_try_echo"; } >&5
+-  (eval "$ac_try") 2>&5
+-  ac_status=$?
+-  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+-  test $ac_status = 0; }; }; then
+-    cross_compiling=no
+-  else
+-    if test "$cross_compiling" = maybe; then
+-	cross_compiling=yes
+-    else
+-	{ { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
+-$as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
+-as_fn_error $? "cannot run C compiled programs.
+-If you meant to cross compile, use \`--host'.
+-See \`config.log' for more details" "$LINENO" 5; }
+-    fi
+-  fi
+-fi
++
++cross_compiling=no
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $cross_compiling" >&5
+ $as_echo "$cross_compiling" >&6; }
