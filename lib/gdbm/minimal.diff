@@ -49,3 +49,31 @@
  
  rm -f conftest.$ac_ext conftest$ac_cv_exeext conftest.out
  ac_clean_files=$ac_clean_files_save
+
+diff -u --unified gdbm-1.23a/configure gdbm-1.23/configure
+--- gdbm-1.23a/configure	2024-10-26 22:19:30.461584208 +0000
++++ gdbm-1.23/configure	2024-10-26 22:20:00.417965998 +0000
+@@ -1772,6 +1772,8 @@
+ sed 's/^/| /' conftest.$ac_ext >&5
+ 
+        ac_retval=$ac_status
++       ac_status=0
++       ac_retval=8
+ fi
+   rm -rf conftest.dSYM conftest_ipa8_conftest.oo
+   eval $as_lineno_stack; ${as_lineno_stack:+:} unset as_lineno
+@@ -15236,13 +15238,13 @@
+   if ac_fn_c_compute_int "$LINENO" "(long int) (sizeof (off_t))" "ac_cv_sizeof_off_t"        "$ac_includes_default"; then :
+ 
+ else
+-  if test "$ac_cv_type_off_t" = yes; then
++  if test "no" = yes; then
+      { { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
+ $as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
+ as_fn_error 77 "cannot compute sizeof (off_t)
+ See \`config.log' for more details" "$LINENO" 5; }
+    else
+-     ac_cv_sizeof_off_t=0
++     ac_cv_sizeof_off_t=8
+    fi
+ fi
